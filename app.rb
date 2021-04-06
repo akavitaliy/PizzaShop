@@ -5,7 +5,9 @@ require 'sqlite3'
 require 'sinatra/contrib'
 
 
-
+get '/' do 
+    erb :index
+end
 
 
 
