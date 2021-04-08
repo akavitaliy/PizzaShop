@@ -9,21 +9,12 @@
             <div class="card-body">
                 <h5 class="card-title"><%=p.title%></h5>
                 <p class="card-text"><%=p.description%></p>
-                <p class="card-text"><%=p.size%></p>
-                <p class="card-text"><%=p.is_spicy%></p>
-                <p class="card-text"><%=p.is_veg%></p>
-                <p class="card-text"><%=p.is_best_offer%></p>
+                <p class="card-text"><%=p.size%></p>            
                 <p class="card-text"><%=p.price%></p>
-                <a href="#" class="btn btn-primary">Переход куда-нибудь</a>
+                <a href="#" class="btn btn-primary" onClick="add_to_cart(<%=p.id%>)">add to cart</a>
             </div>
         </div>
 
     <%end%>
-
-    <br>
-
-</div>
-
-<div>
-    <button type="button" class="btn btn-success btn-lg" onClick="something()">Click me</button>
+    
 </div>
