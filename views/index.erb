@@ -1,16 +1,29 @@
 <h2>Hello to PizzaShop</h2>
 
-<div class="row">
+<div class="card-deck">
 
     <%@products.each do |p|%>
 
-        <div class="col-md-3">
-            <%=p.title%>
+        <div class="col-md-4">
+            <img src="<%=p.path_to_image%>" class="card-img-top">
+            <div class="card-body">
+                <h5 class="card-title"><%=p.title%></h5>
+                <p class="card-text"><%=p.description%></p>
+                <p class="card-text"><%=p.size%></p>
+                <p class="card-text"><%=p.is_spicy%></p>
+                <p class="card-text"><%=p.is_veg%></p>
+                <p class="card-text"><%=p.is_best_offer%></p>
+                <p class="card-text"><%=p.price%></p>
+                <a href="#" class="btn btn-primary">Переход куда-нибудь</a>
+            </div>
         </div>
 
     <%end%>
-    
+
+    <br>
+
 </div>
 
-<button type="button" class="btn btn-success btn-lg" onClick="something()">Click me</button>
-
+<div>
+    <button type="button" class="btn btn-success btn-lg" onClick="something()">Click me</button>
+</div>
