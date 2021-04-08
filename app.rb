@@ -2,10 +2,11 @@
 require 'rubygems'
 require 'sinatra'
 require 'sqlite3'
-require 'sinatra/contrib'
+require 'sinatra/reloader'
 require 'sinatra/activerecord'
+require 'rake'
 
-set :database, "sqlite3:pizza.db"
+set :database, {adapter: "sqlite3", database: "pizza.db"}
 
 class Product < ActiveRecord::Base
     
