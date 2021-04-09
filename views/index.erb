@@ -9,9 +9,9 @@
             <div class="card-body">
                 <h5 class="card-title"><%=p.title%></h5>
                 <p class="card-text"><%=p.description%></p>
-                <p class="card-text"><%=p.size%></p>            
-                <p class="card-text"><%=p.price%></p>
-                <a href="#" class="btn btn-primary" onClick="add_to_cart(<%=p.id%>)">add to cart</a>
+                <p class="card-text">Size: <%=p.size%> cm</p>            
+                <p class="card-text">Price: <%=p.price%> rub</p>
+                <a href="#" class="btn btn-success" onClick="add_to_cart(<%=p.id%>)">Add to cart</a>
             </div>
         </div>
 
