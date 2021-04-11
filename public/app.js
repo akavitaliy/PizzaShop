@@ -11,14 +11,20 @@ function something()
 
 function add_to_cart(id)
 {
-    var key = 'product_' + id
+    var key = 'product_' + id;
 
     var x = window.localStorage.getItem(key);
     x = x * 1 + 1;
     window.localStorage.setItem(key, x);
 
 
-    alert('Itemes in your cart: ' + cart_get_numbers_of_item());
+    update_orders_input();
+}
+
+function update_orders_input()
+{
+    var orders = cart_get_orders();
+    $('#oreders_input').val(orders);
 }
 
 function cart_get_numbers_of_item()
@@ -51,7 +57,7 @@ function cart_get_orders()
 
         if(key.indexOf('product_') == 0)
         {
-            orders = orders + key + "=" + value = ",";
+            orders = orders + key + "=" + value + ",";
         }
     }
 
