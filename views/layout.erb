@@ -45,7 +45,12 @@
 			    </ul>
 				<ul class="nav navbar-nav navbar-right">
 				<li class="nav-item">
-					<a class="nav-link active" href="#">Cart  <span class="badge badge-light">4</span></a>
+					<form action="/cart" method="POST">
+						<input name="order" type="text">
+						<button type="submit" class="btn btn-primary  btn-lg">
+						Cart <span class="badge badge-light">4</span>
+					</button>	
+					</form>				
 				</li>
 			  </div><!--/.nav-collapse -->
 			</nav>
