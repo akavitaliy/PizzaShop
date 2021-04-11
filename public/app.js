@@ -19,12 +19,20 @@ function add_to_cart(id)
 
 
     update_orders_input();
+    update_order_button();
 }
 
 function update_orders_input()
 {
     var orders = cart_get_orders();
     $('#oreders_input').val(orders);
+}
+
+function update_order_button()
+{
+    var item = 'Cart ' + ' (' + cart_get_numbers_of_item() + ')';
+    $('#orders_button').val(item);
+    return item; 
 }
 
 function cart_get_numbers_of_item()
