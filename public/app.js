@@ -1,13 +1,14 @@
 
 
-function something() 
-{
-    var x = window.localStorage.getItem('bbb');
-    x = x * 1 + 1;
-    window.localStorage.setItem('bbb', x);
-    alert(x); 
-     
-}
+// function something() 
+// {
+//     var x = window.localStorage.getItem('bbb');
+//     x = x * 1 + 1;
+//     window.localStorage.setItem('bbb', x);
+//     alert(x);      
+// }
+
+
 
 function add_to_cart(id)
 {
@@ -22,11 +23,15 @@ function add_to_cart(id)
     update_order_button();
 }
 
+
+
 function update_orders_input()
 {
     var orders = cart_get_orders();
     $('#oreders_input').val(orders);
 }
+
+
 
 function update_order_button()
 {
@@ -35,6 +40,8 @@ function update_order_button()
     return item; 
 }
 
+
+//определяем количество товаров в корзине
 function cart_get_numbers_of_item()
 {
     var cnt = 0
@@ -54,6 +61,8 @@ function cart_get_numbers_of_item()
 
 }
 
+
+
 function cart_get_orders()
 {
     var orders = 0
@@ -71,4 +80,12 @@ function cart_get_orders()
 
     return orders;
 
+}
+
+
+function cart_clean()
+{
+    window.localStorage.clear();
+    //window.location.reload();
+    window.location.href = '/cart';
 }
