@@ -87,5 +87,5 @@ function cart_clean()
 {
     window.localStorage.clear();
     //window.location.reload();
-    window.location.href = '/cart';
+    window.location.href = '/clear_cart';
 }

@@ -8,13 +8,18 @@ require 'rake'
 
 set :database, {adapter: "sqlite3", database: "pizza.db"}
 
-class Product < ActiveRecord::Base
-    
+
+class Product < ActiveRecord::Base 
 end
 
+class Order < ActiveRecord::Base    
+end
+
+before	do	
+end
 
 get '/' do 
-    @products = Product.all
+    @products = Product.all    
     erb :index
 end
 
@@ -25,7 +30,11 @@ end
 post '/cart' do
     @orders_input = params[:order]
     @items = parse_orders_input @orders_input 
-    @x = @items[0]
+    
+
+    if @items.length == 1
+        return erb :clear_cart    
+    end
 
     @items.each do |item|
         item[0] = Product.find(item[0])
@@ -33,6 +42,7 @@ post '/cart' do
     end
 
     erb :cart
+
 end
 
 get '/cart' do
@@ -64,3 +74,6 @@ def parse_orders_input orders_input
 
 end   
 
+get '/clear_cart' do
+    erb :clear_cart
+end
